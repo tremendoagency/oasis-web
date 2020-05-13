@@ -124,6 +124,9 @@ img::-moz-selection {
 .btn-secondary:active, .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(66, 209, 198, 0.5) !important;
 }
+.bg-primary{
+  background-color: #30b8b0 !important;
+}
 
 #mainNav {
   background-color: #f4f4f6;
@@ -315,6 +318,35 @@ header.masthead .intro-text .intro-heading {
   .profile .team-member img{
     width: 100%;
     height: auto;
+  }
+}
+
+section.download {
+  position: relative;
+  padding: 150px 0;
+}
+
+section.download h2 {
+  margin-top: 0;
+}
+
+section.download .badges .badge-link {
+  display: block;
+  margin-bottom: 25px;
+}
+
+section.download .badges .badge-link:last-child {
+  margin-bottom: 0;
+}
+
+section.download .badges .badge-link img {
+  height: 60px;
+}
+
+@media (min-width: 768px) {
+  section.download .badges .badge-link {
+    display: inline-block;
+    margin-bottom: 0;
   }
 }
 
