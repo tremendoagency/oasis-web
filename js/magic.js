@@ -4,7 +4,11 @@
   // Preloader
 
   $(window).on('load', function () {
-    $('body').removeClass('loading');
+    setTimeout((function() {
+      $('#loader').animate({ "opacity": "0" }, 1000, function(){
+        $('#loader').remove();
+      });
+    }), 1000);
   });
 
   // Navigation
@@ -58,28 +62,16 @@
     }
   });
 
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 54)
-        }, 1000, "easeInOutExpo");
-        return false;
-      }
-    }
-  });
-
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.mobile-navbar').removeClass('show');
-  });
-
-  $('#index .navbar-toggler').click(function() {
+  $('#navbar-toggler').click(function() {
+    $('#navbar').toggleClass('open');
     $('.mobile-navbar').toggleClass('show');
-    $('.navbar-toggler i').toggleClass('fa-times');
+  });
+
+  $('.slide-to').on( "click", function(event){
+    event.preventDefault();
+    navigation.slideTo($(this).attr('data-slide'));
+    $('.mobile-navbar').removeClass('show');
+    $('#navbar-toggler').removeClass('open');
   });
 
   // Activate scrollspy to add active class to navbar items on scroll
