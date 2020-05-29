@@ -2,12 +2,12 @@
   "use strict"; // Start of use strict
 
   // Preloader 
-  $('body').jpreLoader({
-    showSplash: false,
-		showPercentage: true,
-    autoClose: true
-  }, function() {
-    //callback function
+  $(window).on('load', function () {
+    setTimeout((function() {
+      $('#loader').animate({ "opacity": "0" }, 1000, function(){
+        $('#loader').remove();
+      });
+    }), 1000);
   });
 
   // Video

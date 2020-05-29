@@ -9,7 +9,7 @@
   <title>Oasis</title>
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" type="text/css">
   <link href="../css/styles.css" rel="stylesheet">
   <link href="../vendor/jpreloader/jpreloader.css" rel="stylesheet">
   <link href="../vendor/swiper/swiper.min.css" rel="stylesheet">
@@ -18,19 +18,26 @@
 
 <body id="index">
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-dark fixed-top" id="mainNav">
-    <div class="container-fluid">
-      <a class="navbar-brand js-scroll-trigger" href="../../index.html"><img class="img-fluid" src="../img/logo.png"/></a>
-    </div>
-  </nav>
-  <div class="mobile-navbar h-100 d-flex align-items-center justify-content-center text-center">
-    <div class="text-uppercase">
-      <a class="d-block js-scroll-trigger" href="#home">inicio</a>
-      <a class="d-block js-scroll-trigger" href="#team">equipo</a>
-      <a class="d-block js-scroll-trigger" href="/call">llamar ahora</a>
+  <div id="loader">
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+      <h2 class="text-light m-0 text-center">
+        Estamos preparando tu llamada.
+        <span class="font-weight-light">
+          <br/>
+          Una persona de nuestro equipo estará
+          <br/>
+          contigo en instantes
+        </span>
+      </h1>
     </div>
   </div>
+  
+  <!-- Navigation -->
+  <nav id="navbar" class="open">
+    <div class="navbar-inner d-flex justify-content-between align-items-center p-4">
+      <a class="navbar-logo" href="#"><img class="img-fluid" src="../img/logo-white.png"/></a>
+    </div>
+  </nav>
 
   <!-- Header -->
   <header class="masthead d-flex" id="home">
