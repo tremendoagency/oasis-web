@@ -71,7 +71,7 @@
     event.preventDefault();
     navigation.slideTo($(this).attr('data-slide'));
     $('.mobile-navbar').removeClass('show');
-    $('#navbar-toggler').removeClass('open');
+    $('#navbar').removeClass('open');
   });
 
   // Activate scrollspy to add active class to navbar items on scroll
