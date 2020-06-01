@@ -12,7 +12,7 @@
 
   // Video
   var domain = "meet.jit.si";
-  var meetingName = "anythinghere";
+  var meetingName = "Llamada de Oasis Call";
   var parentElement = document.querySelector("#video");
   var options = {
     roomName: meetingName,
