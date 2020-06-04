@@ -26,6 +26,38 @@
     </div>
   </nav>
 
+  <!-- Modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="w-100" id="call-form">
+            <div class="form-group mc-form-group-EMAIL">
+                <input type="hidden" name="EMAIL" placeholder="Email">
+                <div class="mc-error"></div>
+            </div>
+            <div class="form-group mc-form-group-CONTACT">
+              <input class="form-control rounded-pill" type="text" name="CONTACT" placeholder="Ingresá tu Email" required>
+              <div class="mt-1 text-light mc-error"></div>
+            </div>
+            <div class="form-group mc-form-group-FULLNAME">
+                <input class="form-control rounded-pill" type="text" name="FULLNAME" placeholder="Ingresá tu Nombre" required>
+                <div class="mt-1 text-light mc-error"></div>
+            </div>
+            <div class="form-group mc-form-group-MEETINGID">
+              <input type="hidden" name="MEETINGID" placeholder="Meeting ID" value="">
+              <div class="mc-error"></div>
+            </div>
+            <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6LcHdQAVAAAAADh6kP8JTWOThtzbpgctasOwsfRB"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success rounded-pill mx-auto" id="submit-call">Ingresar a la llamada</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
   <section class="page-section d-flex profile">
     <div class="container d-flex align-items-center">
@@ -41,38 +73,19 @@
               Desde su formación en Relaciones Públicas, Recursos Humanos y Coaching Ontológico, transitó su camino profesional por empresas multinacionales, organizaciones sin fines de lucro, gobierno, y su propia consultora; tanto fuera como dentro del país
               orienta sus servicios sobre la gestión y desarrollo de las personas para proyectos desafiantes y dinámicos donde vuelca su versatilidad y empatía en el acompañamiento de procesos de transformación.
             </p>
-            <a class="btn btn-secondary btn-xl text-uppercase js-scroll-trigger rounded-pill mt-2" href="../../call">Llamar Ahora</a>
+            <button class="btn btn-secondary btn-xl text-uppercase js-scroll-trigger rounded-pill mt-2" data-toggle="modal" data-target="#formModal">Llamar Ahora</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer 
-  <footer class="footer">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <span class="copyright">Copyright &copy; Oasis 2020</span>
-        </div>
-        <div class="col-md-6">
-          <ul class="list-inline quicklinks">
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>-->
-
   <!-- JavaScript -->
   <script src="../../vendor/jquery/jquery.min.js"></script>
   <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src='../../vendor/jquery-mailchimp.js'></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="../../js/magic.js"></script>
 
 </body>

@@ -18,38 +18,60 @@
 
 <body id="index">
 
-  <div id="loader">
+  <div id="loader" class="bg-gradient">
     <div class="container h-100 d-flex align-items-center justify-content-center">
-      <h2 class="text-light m-0 text-center">
-        Estamos preparando tu llamada.
-        <span class="font-weight-light">
-          <br/>
-          Una persona de nuestro equipo estará
-          <br/>
-          contigo en instantes
-        </span>
-      </h1>
+      <div class="col-10 col-md-6">
+        <h2 class="text-light m-0 text-center">
+          Estamos preparando tu llamada.
+          <span class="font-weight-light">
+            <br/>
+            Una persona de nuestro equipo estará
+            contigo en instantes
+          </span>
+        </h2>
+      </div>
     </div>
   </div>
   
   <!-- Navigation -->
-  <nav id="navbar" class="open">
+  <nav id="navbar">
     <div class="navbar-inner d-flex justify-content-between align-items-center p-4">
       <a class="navbar-logo" href="#"><img class="img-fluid" src="../img/logo-white.png"/></a>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header class="masthead d-flex" id="home">
-    <div id="video"></div>
-  </header>
-
   <!-- JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="../vendor/jpreloader/jpreloader.js"></script>
   <script src='https://meet.jit.si/external_api.js'></script>
-  <script src="../js/call.js"></script>
+  <script>
+      var domain = "meet.jit.si";
+      var meetingName = "oasiscall" + window.location.href.split('#')[1];
+      var options = {
+        roomName: meetingName,
+        width: "100%",
+        height: "100%",
+        parentNode: undefined,
+        interfaceConfigOverwrite: {
+          LANG_DETECTION: true,
+          filmStripOnly: false,
+          TOOLBAR_BUTTONS: ['microphone', 'camera', 'hangup', 'tileview'],
+          SHOW_JITSI_WATERMARK: false,
+          JITSI_WATERMARK_LINK: 'https://jitsi.org',
+          SHOW_WATERMARK_FOR_GUESTS: false,
+          SHOW_BRAND_WATERMARK: false,
+          BRAND_WATERMARK_LINK: '',
+          SHOW_CHROME_EXTENSION_BANNER: false
+        }
+      }
+      var api = new JitsiMeetExternalAPI(domain, options);
+        
+      api.addListener('participantJoined', () => {
+        console.log('opaaaaa');
+        $('#loader').remove();
+      });
+      api.addListener('participantLeft', () => {
+        console.log('opaaaaa');
+      });
+  </script>
 </body>
 </html>

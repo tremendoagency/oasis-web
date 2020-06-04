@@ -26,6 +26,38 @@
     </div>
   </nav>
 
+  <!-- Modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="w-100" id="call-form">
+            <div class="form-group mc-form-group-EMAIL">
+                <input type="hidden" name="EMAIL" placeholder="Email">
+                <div class="mc-error"></div>
+            </div>
+            <div class="form-group mc-form-group-CONTACT">
+              <input class="form-control rounded-pill" type="text" name="CONTACT" placeholder="Ingresá tu Email" required>
+              <div class="mt-1 text-light mc-error"></div>
+            </div>
+            <div class="form-group mc-form-group-FULLNAME">
+                <input class="form-control rounded-pill" type="text" name="FULLNAME" placeholder="Ingresá tu Nombre" required>
+                <div class="mt-1 text-light mc-error"></div>
+            </div>
+            <div class="form-group mc-form-group-MEETINGID">
+              <input type="hidden" name="MEETINGID" placeholder="Meeting ID" value="">
+              <div class="mc-error"></div>
+            </div>
+            <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6LcHdQAVAAAAADh6kP8JTWOThtzbpgctasOwsfRB"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success rounded-pill mx-auto" id="submit-call">Ingresar a la llamada</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
   <section class="page-section d-flex profile">
     <div class="container d-flex align-items-center">
@@ -40,7 +72,7 @@
             <p class="text-dark">
               Licenciada en Comunicación, con un posgrado en Marketing, tras 10 años de trabajar en el área de Comunicación y Marketing en distintos países (Argentina, EEUU y Brasil) para diferentes empresas, decidió reorientar su carrera para estar al servicio de las personas en contextos de aprendizaje individuales y grupales. Formada como Counselor y Coach Ontológica, y certificada en Benziger, PDA assessment y Point of You, actualmente trabaja como Co-facilitadora y Coach en MPH Partners, y es co-docente de la materia Consultoría Psicológica Aplicada en Holos. Además, acompaña a individuos en procesos de crecimiento personal.
             </p>
-            <a class="btn btn-secondary btn-xl text-uppercase js-scroll-trigger rounded-pill mt-2" href="../../call">Llamar Ahora</a>
+            <button class="btn btn-secondary btn-xl text-uppercase js-scroll-trigger rounded-pill mt-2" data-toggle="modal" data-target="#formModal">Llamar Ahora</button>
           </div>
         </div>
       </div>
@@ -51,6 +83,8 @@
   <script src="../../vendor/jquery/jquery.min.js"></script>
   <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src='../../vendor/jquery-mailchimp.js'></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="../../js/magic.js"></script>
 
 </body>

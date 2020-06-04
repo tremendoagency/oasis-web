@@ -155,6 +155,9 @@ img::-moz-selection {
   left: calc(50% - 135px);
   z-index: 1;
 }
+.btn-call:focus{
+  outline: none;
+}
 .btn-call:hover{
   transform: rotate(120deg);
 }
