@@ -81,7 +81,7 @@
 
   // Global Vars
 
-  //window.root = '/oasis-web';
+  window.root = '/oasis-web';
   window.meetingID = Date.now();
 
   // MailChimp Form
@@ -95,8 +95,7 @@
       E003: 'Ingresá un email válido',
     },
     onOk: (message) => {
-      //window.location.href = window.root + '/call#'+meetingID;
-      window.location.href = '/call#'+meetingID;
+      window.location.href = window.root + '/call/#'+meetingID;
     }
   });
   
