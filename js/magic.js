@@ -88,7 +88,7 @@
 
   $('#call-form').MailChimpForm({
     url: 'https://oasis-calls.us10.list-manage.com/subscribe/post?u=c2721d71977933bb468bd91de&amp;id=0289645fb6',
-    fields: '0:EMAIL,1:CONTACT,2:FULLNAME,3:MEETINGID',
+    fields: '0:EMAIL,1:CONTACT,2:FULLNAME,3:PHONE,4:MEETINGID',
     submitSelector: '#submit-call',
     customMessages: {
       E001: 'Completá tu nombre',
