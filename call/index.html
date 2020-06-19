@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Una comunidad de personas entrenadas en la resolución rápida de conflictos.">
   <meta name="author" content="tremendo agency">
-  <title>Oasis</title>
+  <title>Oasis Calls</title>
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" type="text/css">
@@ -44,6 +44,7 @@
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src='https://meet.jit.si/external_api.js'></script>
   <script>
+      window.root = '/oasis-web';
       var domain = "meet.jit.si";
       var meetingName = "oasiscall" + window.location.href.split('#')[1];
       var options = {
@@ -66,11 +67,10 @@
       var api = new JitsiMeetExternalAPI(domain, options);
         
       api.addListener('participantJoined', () => {
-        console.log('opaaaaa');
         $('#loader').remove();
       });
       api.addListener('participantLeft', () => {
-        console.log('opaaaaa');
+        window.location.href = window.root
       });
   </script>
 </body>
